@@ -1,0 +1,1238 @@
+@charset 'UTF-8';
+
+html {
+    min-width: 990px
+}
+
+body {
+    font-family: PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    text-align: left;
+    color: #262626;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    background: #ede7da url(/assets/read/img/body_base_bg.5988a.png) repeat
+}
+
+input::-moz-focus-inner {
+    padding: 0;
+    border: none
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse
+}
+
+a,
+blockquote,
+body,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0
+}
+
+li,
+ol,
+ul {
+    list-style: none outside none
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1.125em
+}
+
+a img {
+    border: none
+}
+
+a {
+    text-decoration: none;
+    color: #262626;
+    outline: 0
+}
+
+a:hover {
+    color: #ed4259
+}
+
+cite,
+em,
+i {
+    font-style: normal
+}
+
+p {
+    word-wrap: break-word;
+    word-break: break-all
+}
+
+@font-face {
+    font-family: 'qd_iconfont';
+    src: url('/assets/read/fonts/fonts/qd_iconfont.51f86.eot');
+    src: url('/assets/read/fonts/qd_iconfont.51f86.eot?#iefix') format('embedded-opentype'),
+        url('/assets/read/fonts/qd_iconfont.f9a3f.woff') format('woff'),
+        url('/assets/read/fonts/qd_iconfont.0a60d.ttf') format('truetype'),
+        url('/assets/read/fonts/qd_iconfont.8a95f.svg#iconfont') format('svg')
+}
+
+.iconfont {
+    font-family: qd_iconfont !important;
+    font-size: 1.5em;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .1px;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.lang {
+    font-family: qd_iconfont;
+}
+
+
+.hidden {
+    display: none
+}
+
+.read-main-wrap {
+    font-family: PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    font-size: 1.25em;
+    position: relative;
+    z-index: 101;
+    width: 800px;
+    margin: 0 auto
+}
+
+.read-main-wrap.font-family03 {
+    font-family: Kaiti
+}
+
+.read-main-wrap.font-family01 {
+    font-family: 'Microsoft YaHei', PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', sans-serif
+}
+
+.read-main-wrap.font-family02 {
+    font-family: PingFangSC-Regular, '-apple-system', Simsun
+}
+
+.text-wrap {
+    min-height: 600px;
+    margin-bottom: 24px;
+    border: 1px solid #d8d8d8;
+    background: url(/assets/read/img/basic_bg.edf95.png) repeat
+}
+
+.text-wrap.last-page {
+    margin-bottom: 55px
+}
+
+.main-text-wrap {
+    padding: 1.75em 2em
+}
+
+.main-text-wrap .text-head {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 12px
+}
+
+.main-text-wrap .text-head h3 {
+    font: 1.5em/2em PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    overflow: hidden;
+    height: 2em;
+    margin-bottom: 0.75em
+}
+
+.main-text-wrap .text-head .guide-box {
+    position: absolute;
+    top: -150px;
+    right: -180px;
+    height: 70px;
+    padding: 0 18px;
+    border-radius: 3px;
+    background: #fff
+}
+
+.main-text-wrap .text-head .guide-box p {
+    font: 14px/22px PingFangSC-Regular, '-apple-system', Simsun;
+    width: 272px;
+    padding-top: 12px;
+    text-align: left
+}
+
+.main-text-wrap .text-head .guide-box cite {
+    top: 100%;
+    right: 50%;
+    margin-right: -6px;
+    border-top: 5px solid #fff;
+    border-right: 5px solid transparent;
+    border-bottom: 0 none;
+    border-left: 5px solid transparent
+}
+
+.main-text-wrap .text-info {
+    font: 0.6em/0.8em PingFangSC-Regular, '-apple-system', Simsun;
+    height: 2em
+}
+
+.main-text-wrap .text-info .info a,
+.main-text-wrap .text-info .info i {
+    font-family: PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    margin-right: 1em;
+    color: #999;
+    color: rgba(0, 0, 0, .4)
+}
+
+.main-text-wrap .text-info .info span {
+    margin-right: 5px
+}
+
+.main-text-wrap .text-info .info .iconfont {
+    font-size: 1em;
+    display: inline-block;
+    min-width: 16px;
+    margin-right: 6px;
+    vertical-align: -2px
+}
+
+.main-text-wrap .text-info .info a:hover {
+    color: #ed4259
+}
+
+.main-text-wrap .text-info .top-comment-wrap {
+    position: relative;
+    z-index: 1;
+    margin-top: -10px
+}
+
+.main-text-wrap .text-info .top-comment-wrap dl {
+    float: right;
+    margin-top: 6px
+}
+
+.main-text-wrap .text-info .top-comment-wrap dl dd {
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: border-radius .3s, box-shadow .3s;
+    border-radius: 100%;
+    background: #fff
+}
+
+.main-text-wrap .text-info .top-comment-wrap dl dd img {
+    width: 100%;
+    height: 100%;
+    transition: border-radius .3s, box-shadow .3s;
+    border-radius: 100%
+}
+
+.main-text-wrap .text-info .top-comment-wrap dl dd:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3)
+}
+
+.main-text-wrap .text-info .top-comment-wrap .comment-btn {
+    line-height: 32px;
+    float: right;
+    width: 32px;
+    height: 32px;
+    margin-top: 2px;
+    text-align: center;
+    border-radius: 2px
+}
+
+.main-text-wrap .text-info .top-comment-wrap .comment-btn .iconfont {
+    font-size: 1em;
+    min-width: 16px;
+    color: #999;
+    color: rgba(0, 0, 0, .4)
+}
+
+.main-text-wrap .text-info .top-comment-wrap .comment-btn:hover {
+    background: #e5e5e5
+}
+
+.main-text-wrap .text-info .top-comment-wrap .j_comReplyNum {
+    font: 12px/14px Arial;
+    float: right;
+    margin-top: 8px;
+    vertical-align: top
+}
+
+.main-text-wrap .read-content {
+    margin-bottom: 64px
+}
+
+.main-text-wrap .admire-wrap {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 48px
+}
+
+.main-text-wrap .admire-wrap .read-btn-box {
+    text-align: center
+}
+
+.main-text-wrap .admire-wrap .admire {
+    font-size: 1.25em;
+    line-height: 60px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 160px;
+    height: 60px;
+    margin: 0 25px 24px;
+    text-align: center;
+    text-indent: 5px;
+    letter-spacing: 5px;
+    color: #fff;
+    border-radius: 50px;
+    background: #bf2c24
+}
+
+.main-text-wrap .admire-wrap .admire:hover {
+    background: #ed4259
+}
+
+.main-text-wrap .admire-wrap .admire span {
+    font: 0.75em/0.875em PingFangSC-Regular, '-apple-system', Simsun;
+    position: absolute;
+    top: 0.75em;
+    left: 106px;
+    text-indent: 0;
+    letter-spacing: 0
+}
+
+.main-text-wrap .admire-wrap .pwd-btn {
+    text-indent: 0;
+    letter-spacing: 0
+}
+
+.main-text-wrap .admire-wrap .report-btn {
+    font-size: 0.75em;
+    position: absolute;
+    right: 0;
+    bottom: 0.75em;
+    color: #999;
+    color: rgba(0, 0, 0, .4)
+}
+
+.main-text-wrap .admire-wrap .report-btn .iconfont {
+    font-size: 1.125em;
+    display: inline-block;
+    min-width: 18px;
+    margin-right: 3px;
+    vertical-align: -2px;
+    -webkit-text-stroke-width: 0
+}
+
+.main-text-wrap .admire-wrap .report-btn:hover {
+    color: #ed4259
+}
+
+.cf {
+    zoom: 1
+}
+
+.cf:after,
+.cf:before {
+    display: table;
+    content: ''
+}
+
+.cf:after {
+    clear: both
+}
+
+.chapter-control {
+    height: 70px;
+    margin-bottom: 24px;
+    text-align: center;
+    border: 1px solid #d8d8d8;
+    background: url(/assets/read/img/basic_bg.edf95.png) repeat
+}
+
+.chapter-control a {
+    font: 18px/70px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    width: 33.2%
+}
+
+.chapter-control a:hover {
+    color: #1a1a1a;
+    background: #ede9e1;
+    background: rgba(0, 0, 0, .03)
+}
+
+.chapter-control a.disabled {
+    cursor: default;
+    color: #ccc;
+    background: 0 0
+}
+
+.chapter-control .w-all {
+    width: 100%
+}
+
+.chapter-control span {
+    height: 32px;
+    border-right: 1px solid #d8d8d8
+}
+
+.dib-wrap {
+    font-size: 0
+}
+
+.dib-wrap a,
+.dib-wrap span {
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: normal;
+    word-spacing: normal
+}
+
+.left-bar-list,
+.right-bar-list {
+    position: fixed;
+    width: 60px
+}
+
+.left-bar-list dd,
+.right-bar-list dd {
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+    border: 1px solid #d8d8d8;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-top: none;
+    background: url(/assets/read/img/basic_bg.edf95.png) repeat
+}
+
+.left-bar-list dd .red-point,
+.right-bar-list dd .red-point {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 38px;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: #bf2c24
+}
+
+.left-bar-list dd:first-child,
+.right-bar-list dd:first-child {
+    border-top: 1px solid #d8d8d8;
+    border-top: 1px solid rgba(0, 0, 0, .1)
+}
+
+.left-bar-list dd.act,
+.right-bar-list dd.act {
+    z-index: 101;
+    width: 69px;
+    border-right: none;
+    background: url(/assets/read/img/base_theme_popup.f1a43.png) repeat;
+    box-shadow: -10px 5px 25px -4px rgba(0, 0, 0, .2)
+}
+
+.left-bar-list dd a,
+.right-bar-list dd a {
+    font: 12px/16px PingFangSC-Regular, '-apple-system', Simsun;
+    display: block;
+    width: 58px;
+    height: 58px;
+    transition: none;
+    text-align: center
+}
+
+.left-bar-list dd a i,
+.right-bar-list dd a i {
+    display: block;
+    height: 48px;
+    padding-top: 12px;
+    color: #999;
+    color: rgba(0, 0, 0, .4)
+}
+
+.left-bar-list dd a span,
+.right-bar-list dd a span {
+    transition: color .3s
+}
+
+.left-bar-list dd a .iconfont,
+.right-bar-list dd a .iconfont {
+    font-size: 1em;
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin: 0 auto 6px;
+    transition: color .3s;
+    color: #000
+}
+
+.left-bar-list dd a:hover .iconfont,
+.right-bar-list dd a:hover .iconfont {
+    color: #ed4259
+}
+
+.left-bar-list dd a:hover span,
+.right-bar-list dd a:hover span {
+    color: #ed4259
+}
+
+.left-bar-list dd a.add-book.in-shelf,
+.right-bar-list dd a.add-book.in-shelf {
+    line-height: 60px
+}
+
+.left-bar-list dd .guide-box,
+.right-bar-list dd .guide-box {
+    font: 14px/32px PingFangSC-Regular, '-apple-system', Simsun;
+    top: 14px;
+    white-space: nowrap;
+    color: #000
+}
+
+.left-bar-list {
+    z-index: 102;
+    top: 119px;
+    left: 50%;
+    margin-left: -468px
+}
+
+.left-bar-list .guide-box {
+    right: 72px
+}
+
+.left-bar-list .guide-box cite {
+    right: -5px;
+    border-top: 5px solid transparent;
+    border-right: 0 none;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #fff
+}
+
+.left-bar-list .panel-list-wrap {
+    position: relative;
+    z-index: 1;
+    min-height: 235px
+}
+
+.left-bar-list .panel-list-wrap .loading {
+    padding: 131px 0;
+    text-align: center
+}
+
+.left-bar-list .panel-list-wrap .loading span {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    background: url(/assets/read/img/loading.6bd87.gif) no-repeat
+}
+
+.left-bar-list .panel-list-wrap .loading p {
+    font: 14px/24px PingFangSC-Regular, '-apple-system', Simsun
+}
+
+.left-bar-list .panel-wrap {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 69px;
+    width: 798px
+}
+
+.left-bar-list .panel-wrap .panel-box {
+    padding: 40px 0 40px 24px;
+    border: 1px solid #d8d8d8;
+    border: 1px solid rgba(0, 0, 0, .1)
+}
+
+.left-bar-list .panel-wrap .panel-box h4 {
+    font-size: 1.125em;
+    line-height: 1.375em;
+    margin-bottom: 28px
+}
+
+.left-bar-list .panel-wrap.catalog .panel-box {
+    padding-left: 0
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-tab {
+    margin: 0 0 20px 24px
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-tab span {
+    font-size: 1.125em;
+    line-height: 1.375em;
+    margin-right: 20px;
+    padding: 0 2px 4px;
+    cursor: pointer;
+    transition: color .3s;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-tab span.act,
+.left-bar-list .panel-wrap.catalog .catalog-tab span:hover {
+    color: #ed4259
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-tab span.act {
+    border-bottom: 1px solid #ed4259
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap,
+.left-bar-list .panel-wrap.catalog .catalog-scroll-wrap {
+    overflow: auto
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3 {
+    position: relative;
+    z-index: 2;
+    transition: background .3s
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3 i {
+    font: 700 18px/40px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    display: block;
+    width: 754px;
+    height: 34px;
+    margin-left: 24px;
+    padding-bottom: 6px;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3:hover {
+    background: rgba(0, 0, 0, .05)
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3 span {
+    font: 700 12px/16px Arial;
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    margin-left: 8px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background: #fc6c28
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3 cite {
+    float: left;
+    overflow: hidden;
+    max-width: 90%;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3 em {
+    font-size: 1em;
+    line-height: 1em;
+    float: right;
+    width: 16px;
+    height: 1em;
+    margin: 12px 12px 0 0
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3 em.up {
+    display: none
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3.cur em.down {
+    display: none
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap h3.cur em.up {
+    display: block
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list {
+    display: none;
+    clear: both;
+    margin-bottom: 20px
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list ul {
+    overflow: hidden;
+    padding-left: 24px
+}
+
+/* li 小说目录下划线 */
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li {
+    font: 16px/40px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    float: left;
+    width: 376px;
+    border-top: 1px solid #cf0505
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li:first-child,
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li:first-child+li {
+    border-top: none
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li:after,
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li:before {
+    display: table;
+    content: ''
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li:after {
+    clear: both
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li a {
+    float: left;
+    overflow: hidden;
+    max-width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li em {
+    font-size: 1em;
+    line-height: 1em;
+    float: right;
+    width: 1em;
+    height: 1em;
+    margin: 12px 12px 0 0;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li.on a {
+    color: #ed4259
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list li:nth-of-type(odd) .iconfont {
+    margin-right: 48px
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list.no-data {
+    padding: 48px 0
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list.no-data .iconfont {
+    font-size: 5.25em;
+    width: 72px;
+    height: 5.625em;
+    margin: 0 auto 16px;
+    color: #e6e3da;
+    -webkit-text-stroke-width: 0
+}
+
+.left-bar-list .panel-wrap.catalog .catalog-list-wrap .volume-list.no-data p {
+    font: 16px/22px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap {
+    margin-top: -10px
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .bookmark-list li {
+    position: relative;
+    z-index: 1;
+    padding: 0 0 10px;
+    transition: background .3s
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .bookmark-list li:hover {
+    background: rgba(0, 0, 0, .05)
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .bookmark-list li:first-child .mark-info {
+    border-top: none
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .bookmark-list li .delete {
+    font-size: 1em;
+    position: absolute;
+    z-index: 1;
+    top: 22px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .bookmark-list .mark-info {
+    margin-left: 24px;
+    padding: 14px 24px 0 0;
+    border-top: 1px solid #e5e5e5
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .bookmark-list .mark-info cite {
+    font: 0.875em/1.5em PingFangSC-Regular, '-apple-system', Simsun;
+    float: right;
+    margin-top: 4px;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .bookmark-list .bookmark-link {
+    font: 700 18px/32px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    display: block;
+    overflow: hidden;
+    height: 32px;
+    margin: 0 0 6px;
+    padding-right: 24px
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .no-data {
+    padding: 48px 0
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .no-data .iconfont {
+    font-size: 84px;
+    width: 72px;
+    height: 90px;
+    margin: 0 auto 16px;
+    color: #e6e3da;
+    -webkit-text-stroke-width: 0
+}
+
+.left-bar-list .panel-wrap.catalog .bookmark-list-wrap .no-data p {
+    font: 16px/22px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.setting {
+    width: 480px
+}
+
+.left-bar-list .panel-wrap.setting li {
+    font-size: 0;
+    margin-top: 28px
+}
+
+.left-bar-list .panel-wrap.setting li span {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle
+}
+
+.left-bar-list .panel-wrap.setting li:first-child {
+    margin-top: 0
+}
+
+.left-bar-list .panel-wrap.setting li i {
+    font: 12px/16px PingFangSC-Regular, '-apple-system', Simsun;
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: middle;
+    color: #666
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span {
+    line-height: 32px;
+    width: 34px;
+    height: 34px;
+    margin-right: 16px;
+    border: 1px solid #e5e5e5;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 100%
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span em {
+    font-size: 16px;
+    transition: opacity .3s;
+    text-align: center;
+    opacity: 0;
+    color: #ed4259
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.act {
+    border: 1px solid #ed4259
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.act em {
+    display: block;
+    opacity: 1
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.act cite {
+    display: none
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-0 {
+    background: #faf5eb;
+    background: rgba(250, 245, 235, .8)
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-1 {
+    background: #f5eacc;
+    background: rgba(245, 234, 204, .8)
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-2 {
+    background: #e6f2e6;
+    background: rgba(230, 242, 230, .8)
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-3 {
+    background: #e4f1f5;
+    background: rgba(228, 241, 245, .8)
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-4 {
+    background: #f5e4e4;
+    background: rgba(245, 228, 228, .8)
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-5 {
+    background: #e0e0e0;
+    background: rgba(224, 224, 224, .8)
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-6 {
+    position: relative;
+    background: #191b1c;
+    background: rgba(25, 27, 28, .8)
+}
+
+.left-bar-list .panel-wrap.setting li.theme-list span.theme-6 cite {
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 9px;
+    text-align: center;
+    color: #fff;
+    color: rgba(255, 255, 255, .2)
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span,
+.left-bar-list .panel-wrap.setting li.read-mode span {
+    width: 78px;
+    height: 34px;
+    margin-right: 16px;
+    transition: color .3s;
+    border: 1px solid #e5e5e5;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    background: #fff;
+    background: rgba(255, 255, 255, .5)
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span.act,
+.left-bar-list .panel-wrap.setting li.read-mode span.act {
+    color: #ed4259;
+    border: 1px solid #ed4259;
+    background: #fff0f2
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span em,
+.left-bar-list .panel-wrap.setting li.read-mode span em {
+    font-size: 16px;
+    line-height: 34px;
+    transition: color .3s
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span.kaiti,
+.left-bar-list .panel-wrap.setting li.read-mode span.kaiti {
+    font: 16px/34px KaiTi
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span.yahei,
+.left-bar-list .panel-wrap.setting li.read-mode span.yahei {
+    font: 14px/34px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span.simsun,
+.left-bar-list .panel-wrap.setting li.read-mode span.simsun {
+    font: 14px/34px PingFangSC-Regular, '-apple-system', Simsun
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span:hover,
+.left-bar-list .panel-wrap.setting li.read-mode span:hover {
+    color: #ed4259
+}
+
+.left-bar-list .panel-wrap.setting li.font-family span:hover em,
+.left-bar-list .panel-wrap.setting li.read-mode span:hover em {
+    color: #ed4259
+}
+
+.left-bar-list .panel-wrap.setting li.font-size cite,
+.left-bar-list .panel-wrap.setting li.page-width cite {
+    display: inline-block;
+    width: 270px;
+    height: 34px;
+    vertical-align: middle;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    background: #fff;
+    background: rgba(255, 255, 255, .5)
+}
+
+.left-bar-list .panel-wrap.setting li.font-size span,
+.left-bar-list .panel-wrap.setting li.page-width span {
+    line-height: 34px;
+    height: 34px
+}
+
+.left-bar-list .panel-wrap.setting li.font-size span:first-child,
+.left-bar-list .panel-wrap.setting li.page-width span:first-child {
+    width: 89px
+}
+
+.left-bar-list .panel-wrap.setting li.font-size span em,
+.left-bar-list .panel-wrap.setting li.page-width span em {
+    font-size: 16px;
+    line-height: 34px;
+    transition: color .3s
+}
+
+.left-bar-list .panel-wrap.setting li.font-size span.lang,
+.left-bar-list .panel-wrap.setting li.page-width span.lang {
+    font-size: 16px;
+    width: 90px;
+    cursor: default;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.setting li.font-size span.lang+b+span,
+.left-bar-list .panel-wrap.setting li.page-width span.lang+b+span {
+    width: 89px
+}
+
+.left-bar-list .panel-wrap.setting li.font-size span:hover em,
+.left-bar-list .panel-wrap.setting li.page-width span:hover em {
+    color: #ed4259
+}
+
+.left-bar-list .panel-wrap.setting li.font-size b,
+.left-bar-list .panel-wrap.setting li.page-width b {
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+    border-right: 1px solid #e5e5e5
+}
+
+.left-bar-list .panel-wrap.setting li.remind .auto-switch {
+    position: static;
+    width: auto;
+    margin: 0
+}
+
+.left-bar-list .panel-wrap.setting .btn-wrap {
+    padding: 48px 0 0;
+    text-align: center
+}
+
+.left-bar-list .panel-wrap.setting .btn-wrap a {
+    font: 14px/34px PingFangSC-Regular, '-apple-system', Simsun;
+    width: 100px;
+    height: 34px;
+    border-radius: 2px
+}
+
+.left-bar-list .panel-wrap.setting .btn-wrap a.grey-btn {
+    line-height: 32px;
+    width: 98px;
+    height: 32px;
+    margin-left: 40px
+}
+
+.left-bar-list .panel-wrap.setting .remind-voice {
+    font-size: 12px;
+    color: #999
+}
+
+.left-bar-list .panel-wrap.cellphone {
+    width: 382px
+}
+
+.left-bar-list .panel-wrap.cellphone .panel-box {
+    padding-left: 0
+}
+
+.left-bar-list .panel-wrap.cellphone h4 {
+    padding-left: 24px
+}
+
+.left-bar-list .panel-wrap.cellphone .qr-code-wrap h5 {
+    font: 14px/20px PingFangSC-Regular, '-apple-system', Simsun;
+    margin-bottom: 32px;
+    text-align: center
+}
+
+.left-bar-list .panel-wrap.cellphone .qr-code-wrap img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 40px
+}
+
+.left-bar-list .panel-wrap.cellphone .qr-code-wrap .scan-bottom {
+    width: 154px;
+    margin: 0 auto
+}
+
+.left-bar-list .panel-wrap.cellphone .qr-code-wrap .scan-bottom .tip {
+    font: 12px/16px PingFangSC-Regular, '-apple-system', Simsun;
+    float: left;
+    text-align: left;
+    color: #a6a6a6
+}
+
+.left-bar-list .panel-wrap.cellphone .qr-code-wrap .scan-bottom .tip .red {
+    margin-left: 5px
+}
+
+.left-bar-list .panel-wrap.game {
+    overflow: hidden;
+    width: auto;
+    height: 500px
+}
+
+.left-bar-list .panel-wrap.game iframe {
+    width: 720px;
+    height: 500px
+}
+
+.left-bar-list dd.left-game-icon {
+    border: none
+}
+
+.left-bar-list dd.left-game-icon a {
+    width: 60px;
+    height: 60px
+}
+
+.right-bar-list {
+    z-index: 101;
+    right: 50%;
+    bottom: 0;
+    margin-right: -468px
+}
+
+.right-bar-list dd.go-top i {
+    padding-top: 22px
+}
+
+.right-bar-list dd.go-top .iconfont {
+    margin-left: 19px
+}
+
+.right-bar-list dd.hongbao {
+    margin-top: 8px;
+    border-top: 1px solid #d8d8d8;
+    border-top: 1px solid rgba(0, 0, 0, .1)
+}
+
+.right-bar-list .guide-box {
+    left: 72px
+}
+
+.right-bar-list .guide-box cite {
+    left: -5px;
+    border-top: 5px solid transparent;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid transparent;
+    border-left: 0 none
+}
+
+.guide-box {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    padding: 0 12px;
+    border-radius: 3px;
+    background: #fff
+}
+
+.guide-box cite {
+    position: absolute;
+    z-index: 1;
+    top: 11px;
+    width: 0;
+    height: 0
+}
+
+.panel-wrap {
+    background: url(/assets/read/img/base_theme_popup.f1a43.png) repeat;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2)
+}
+
+.panel-wrap .close-panel {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    transition: .5s;
+    transform: rotate(0);
+    text-align: center;
+    color: #a6a6a6
+}
+
+.panel-wrap .close-panel:hover {
+    transform: rotate(90deg);
+    color: #1a1a1a
+}
+
+@media(max-width:960px) {
+    body {
+        width: 100%;
+    }
+
+    .chapter-control {
+        height: 100px;
+        margin-bottom: 24px;
+    }
+
+    .chapter-control a {
+        font: 50px/100px PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+        width: 33.2%
+    }
+
+    .read-main-wrap {
+        font-family: PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+        font-size: 3em;
+        position: absolute;
+        z-index: 101;
+        width: 100%;
+        margin: 0 auto
+    }
+
+    #j_leftBarList {
+        display: none
+    }
+
+    #j_rightBarList {
+        display: none
+    }
+}

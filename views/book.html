@@ -1,0 +1,86 @@
+<% include('./header.html') %>
+<link href="/assets/home/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/search/css/owl.carousel.css">
+</head>
+
+<body>
+	<section class="courses-area section-gap">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-5 about-right">
+					<h1>
+						{{bookName}} <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- {{bookAuth}}
+					</h1>
+					<div class="wow fadeIn" data-wow-duration="1s">
+						<p>
+							{{@bookDesc}}
+						</p>
+					</div>
+					<a href="javascript:;" class="primary-btn white" id="read_first">开&nbsp;&nbsp;&nbsp;&nbsp;阅</a>
+					<a href="javascript:;" class="primary-btn white" id="last_page">上&nbsp;&nbsp;一&nbsp;&nbsp;页</a>
+					<a href="javascript:;" class="primary-btn white" id="next_page">下&nbsp;&nbsp;一&nbsp;&nbsp;页</a>
+					<a href="javascript:;" class="primary-btn white" id="jump_page">跳&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+					<input type="number" class="primary-btn white" style="width:250px;" id="chapter-list-page" placeholder="共计{{pageMax}}页">
+				</div>
+				<div class="offset-lg-1 col-lg-6">
+					<div class="courses-right">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<ul class="courses-list">
+									{{each chapterList1}}
+									<li>
+										<a class="wow fadeInLeft" href={{$value.href}} data-wow-duration="1s" data-wow-delay={{$value.ms}}>
+											<i class="fa fa-book"></i> {{$value.title}}
+										</a>
+									</li>
+									{{/each}}
+								</ul>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<ul class="courses-list">
+									{{each chapterList2}}
+									<li>
+										<a class="wow fadeInLeft" href={{$value.href}} data-wow-duration="1s" data-wow-delay={{$value.ms}}>
+											<i class="fa fa-book"></i> {{$value.title}}
+										</a>
+									</li>
+									{{/each}}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		(function () {
+			let queryURL = window.location.href
+			let params = queryURL.slice(queryURL.indexOf("?") + 1).split('&')
+			let book = {}
+			for (let i = 0; i < params.length; i++) {
+				book[params[i].slice(0, params[i].indexOf("="))] = params[i].slice(params[i].indexOf("=") + 1)
+			}
+			let u1 = `/book?an=${book.an}&bn=${book.bn}&p=${Number(book.p)+1}&time=${(new Date()).getTime()}`,
+				u2 = `/book?an=${book.an}&bn=${book.bn}&p=${Number(book.p)-1}&time=${(new Date()).getTime()}`,
+				u3 = `/reading?an=${book.an}&bn=${book.bn}&num=0&time=${(new Date()).getTime()}`,
+				clp = $("#chapter-list-page"),
+				pm = clp.attr("placeholder").trim().match(/\d+/g);
+			$("#next_page").attr("href", u1);
+			$("#last_page").attr("href", u2);
+			$("#read_first").attr("href", u3);
+			$("#jump_page").click(function (e) {
+				e.preventDefault();
+				let page = Number(clp.val().trim())
+				if (page < 0 || Number.isNaN(page)) {
+					page = 0
+				} else if (page > pm) {
+					clp.val(pm);
+					swal.fire({"title": `共计<${pm}>页`,"type": "warn"})
+					return
+				}
+				window.location.href = `/book?an=${book.an}&bn=${book.bn}&p=${page}&time=${(new Date()).getTime()}`
+			});
+		})()
+	</script>
+	<% include('./footer.html') %>

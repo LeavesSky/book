@@ -1,0 +1,143 @@
+<% include('./header.html') %>
+</head>
+
+<body>
+
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="/search"><img src="/assets/search/images/search/logo.png" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-active"><a href="/search">Home</a></li>
+						<li><a href="javascript:;">About</a></li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+
+	<!-- Start Banner Area -->
+	<section class="home-banner-area relative">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-center">
+				<div class="banner-content col-lg-8 col-md-12">
+					<!-- 大标题 -->
+					<h1 class="wow fadeIn" data-wow-duration="4s">鸟欲高飞先振翅，人求上进先读书。 <br> ——李苦禅 </h1>
+					<p class="text-white">
+						The bird wants to fly high and flutter the wings first. <br>
+						Li Kuchan.
+					</p>
+					<!-- 搜索 -->
+					<div class="input-wrap">
+						<form class="form-box d-flex justify-content-between">
+							<input type="text" placeholder="Search Books" class="form-control" id="bookName">
+							<button type="button" class="btn search-btn" id="searchBtn">Search</button>
+						</form>
+					</div>
+					<h4 class="text-white">Top courses</h4>
+					<!-- 推荐标签 -->
+					<div class="courses pt-20">
+						<a href="{{tip1}}" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">斗罗大陆</a>
+						<a href="{{tip2}}" data-wow-duration="1s" data-wow-delay=".6s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">三寸人间</a>
+						<a href="{{tip3}}" data-wow-duration="1s" data-wow-delay=".9s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">诛仙</a>
+						<a href="{{tip4}}" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">斗破苍穹</a>
+						<a href="{{tip5}}" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">神墓</a>
+						<a href="{{tip6}}" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">七界传说</a>
+						<a href="{{tip7}}" data-wow-duration="1s" data-wow-delay="2.1s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">开天录</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+			<img src="/assets/search/images/search/rocket.png" alt="">
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<script src="/assets/search/js/superfish.min.js"></script>
+	<script>
+		$(function () { // Initiate superfish on nav menu
+			$(".nav-menu").superfish({
+				animation: {
+					opacity: "show"
+				},
+				speed: 400
+			});
+			$("#searchBtn").click(function (e) {
+				e.preventDefault();
+				$.ajax({
+					type: "post",
+					url: "/search",
+					data: {
+						"bn": $("#bookName").val().trim()
+					},
+					dataType: "json",
+					success: function (data) {
+						if (data.err == 1) {
+							Swal.fire(data.msg)
+						} else {
+							let bookName = data.arr[0].bn;
+							if (data.state == 1) {
+								let {
+									an,
+									bn
+								} = data.arr[0]
+								let a = encodeURI(`an=${an}&bn=${bn}&p=0`)
+								window.location.href = `/book?` + a
+							} else if (data.state > 1) {
+								let ha = data.arr.map((e, i) => {
+									return (
+										`<button id="${i}" class="btn btn-success">` + e.bn + `<br>` +
+										'作&nbsp;者:&nbsp;' + e.an +
+										'</button><br/><br/>')
+								})
+								let timerInterval
+								Swal.fire({
+									title: 'Choose One!',
+									html: '自 动 关 闭 于 <strong></strong> 秒。<br/><br/>' + ha.join(''),
+									timer: 1000000,
+									onBeforeOpen: () => {
+										const content = Swal.getContent()
+										const $ = content.querySelector.bind(content)
+										content.addEventListener('click', (e) => {
+											let i = e.target.id
+											if (!i || i < 0) {
+												Swal("Sorry~~ 找不到小说主人啦!!")
+												clearInterval(timerInterval)
+												return
+											};
+											let a = encodeURI(`an=${data.arr[i].an}&bn=${data.arr[i].bn}&p=0`)
+											window.location.href = `/book?`+a
+										})
+										Swal.showLoading()
+										timerInterval = setInterval(() => {
+											Swal.getContent().querySelector('strong')
+												.textContent = (Swal.getTimerLeft() / 1000)
+												.toFixed(0)
+										}, 100)
+									},
+									onClose: () => {
+										clearInterval(timerInterval)
+									}
+								})
+							} else {
+								Swal.fire("Sorry~~ 出错啦!!")
+								return
+							}
+						}
+					},
+					error: function (error) {
+						console.log(error);
+						Swal("Sorry~~ 出错啦!!")
+						return
+					}
+				});
+			});
+		})
+	</script>
+	<% include('./footer.html') %>

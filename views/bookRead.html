@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ bookName }}_木楠青小说阅读站</title>
+    <meta name="description" content="{{ bookName }}最新章节阅读，由{{ bookAuthor }}创作,木楠青提供首发更新。" />
+    <meta name="keywords" content="{{ bookName }},最新章节,小说,阅读" />
+    <meta name="robots" content="all" />
+    <meta name="googlebot" content="all" />
+    <meta name="baiduspider" content="all" />
+    <meta name="bookName" content={{bookName}} />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.38,user-scalable=yes,shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <link rel="shortcut icon" href="/assets/read/img/fav.png" />
+    <link rel="stylesheet" href="/assets/read/css/book.css" />
+    <script src="/assets/home/js/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+    <div class="read-main-wrap font-family01" id="j_readMainWrap">
+        <div class="text-wrap" id="readbook">
+            <div class="main-text-wrap">
+                <div class="text-head">
+                    <h3 class="j_chapterName">{{ chapterName }}</h3>
+                    <div class="text-info cf">
+                        <div class="info">
+                            <a href="/book?an={{bookAuthor}}&bn={{bookName}}" target=" _blank"><em class="iconfont">&#xe60c;</em>{{
+                                bookName }}</a>
+                            <a href="/book?an={{bookAuthor}}&bn={{bookName}}" target="_blank"><em class="iconfont">&#xe650;</em>{{
+                                bookAuthor }}</a>
+                            <i><em class="iconfont">&#xe64f;</em><span class="j_chapterWordCut">{{ wordCount }}</span>字</i>
+                            <i><em class="iconfont">&#xe653;</em><span class="j_updateTime">{{ updateTime }}</span></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="read-content" id="content" title="我爱你">
+                    {{@readText}}
+                </div>
+                <div class="admire-wrap">
+                    <a class="report-btn" href="javascript:"><em class="iconfont">&#xe657;</em>举报</a>
+                    <div class="read-btn-box">
+                        <a class="admire lang " href="javascript:">赞赏<span class="j_admireNum"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chapter-control dib-wrap" id="c_c">
+            <a href="{{lc}}" id="j_chapterPrev">上一章</a><span>|</span>
+            <a href="{{cl}}" id="j_cl">目录</a><span>|</span>
+            <a href="{{nc}}" id="j_chapterNext">下一章</a>
+        </div>
+    </div>
+    <div class="left-bar-list" id="j_leftBarList">
+        <dl>
+            <dd id="j_navCatalogBtn">
+                <a href="javascript:" onclick="chapterListClick()"><i><em class="iconfont">&#xe619;</em><span>目录</span></i></a>
+                <div class="guide-box"><cite></cite> 目录</div>
+            </dd>
+            <dd id="j_navSettingBtn">
+                <a href="javascript:"><i><em class="iconfont">&#xe65b;</em><span>设置</span></i></a>
+                <div class="guide-box"><cite></cite> 设置</div>
+            </dd>
+            <dd>
+                <a class="add-book" href="javascript:"><i><em class="iconfont">&#xe654;</em><span>书架</span></i></a>
+                <div class="guide-box"><cite></cite> 加入书架</div>
+            </dd>
+            <dd>
+                <a href="/book/home" target="_blank"><i><em class="iconfont">&#xe652;</em><span>书页</span></i></a>
+                <div class="guide-box"><cite></cite> 返回书页</div>
+            </dd>
+            <dd id="j_navGameBtn"></dd>
+        </dl>
+    </div>
+    <div class="right-bar-list" id="j_rightBarList">
+        <dl>
+            <dd class="go-top" id="j_goTop" title="返回顶部">
+                <a href="javascript:;" onclick="topClick()"><i><em class="iconfont">&#xe651;</em></i></a>
+            </dd>
+        </dl>
+    </div>
+</body>
+<script> 
+        window.onload=function () {
+            var that = this;
+            that.leftNav = $("#j_leftBarList");
+            that.leftNavCatalog = false;
+            //目录是否已显示,默认为false,未显示
+            that.showCatalog = false;
+            //标识目录是否已经发送ajax , 默认为false , 未发送
+            that.catalogAjaxbool = false;
+            //做左侧弹窗菜单方位
+            var leftBar = $("#j_leftBarList"),
+                nowLeftTop = (leftBarTop = 119);
+            var rightBar = $("#j_rightBarList"),
+                nowRightBottom = (rightBarBottom = 120),
+                pageHeight,
+                bottomTo;
+            var goTop = $("#j_goTop");
+            //小说信息
+            let queryURL = window.location.href
+            let params = queryURL.slice(queryURL.indexOf("?") + 1).split('&')
+            let book = {}
+            for (let i = 0; i < params.length; i++) {
+            book[params[i].slice(0, params[i].indexOf("="))] = params[i].slice(params[i].indexOf("=") + 1)
+                }
+            let {an, bn, num} = book
+            $(window).on("scroll", function () {
+                    winScrollTop = $(window).scrollTop();
+                    pageHeight = $(document).height();
+                    if (winScrollTop >= leftBarTop && nowLeftTop != 0) {
+                        nowLeftTop = 0;
+                        leftBar.css("top", nowLeftTop);
+                    } else if (winScrollTop < leftBarTop) {
+                        nowLeftTop = leftBarTop - winScrollTop;
+                        leftBar.css("top", nowLeftTop);
+                    }
+                    bottomTo = pageHeight - that.winHeight - rightBarBottom;
+                    if (winScrollTop <= bottomTo && nowRightBottom != 0) {
+                        nowRightBottom = 0;
+                        rightBar.css("bottom", nowRightBottom);
+                    } else if (winScrollTop > bottomTo) {
+                        nowRightBottom =
+                            rightBarBottom - pageHeight + that.winHeight + winScrollTop;
+                        rightBar.css("bottom", nowRightBottom);
+                    }
+                    if (winScrollTop > 0) {
+                        goTop.show();
+                    } else {
+                        goTop.hide();
+                    }
+                })
+                .trigger("scroll");
+            //返回顶部
+            window.topClick = function () {$("body,html").animate({scrollTop: 0},220)};
+            //打开目录弹窗-浮层
+            window.chapterListClick = function () {
+                if (that.showCatalog === false) {
+                    if (that.leftNavCatalog === false) {
+                        $.get("/read/list", {an,bn},
+                            function (data) {
+                                let {err, div, list, msg} = data
+                                if (!err) {
+                                    that.leftNav.append(div);
+                                    let ul = document.getElementById("showlist").children[0]
+                                    let lia = ""
+                                    for (let i = 0; i < list.length; i++) {
+                                        lia +=`<li><a href="/reading?bn=${bn}&an=${an}&num=${list[i].c_num}">${list[i].c_title}</a></li>`
+                                    }
+                                    ul.innerHTML = lia
+                                    that.leftNavCatalog = true;
+                                    that.showCatalog = true;
+                                } else {
+                                    swal.fire({"title":"出错啦~~"+msg,"type":"error"})
+                                }
+                            },
+                        );
+                    } else {
+                        $("#j_catalog").show();
+                        that.showCatalog = true;
+                    }
+                } else {
+                    $("#j_catalog").hide();
+                    that.leftNavCatalog = true;
+                    that.showCatalog = false;
+                }
+            }
+            window.closeCatalog = function () {
+                $("#j_catalog").hide();
+                that.leftNavCatalog = true;
+                that.showCatalog = false;
+            }
+        }
+</script>
+</html>
